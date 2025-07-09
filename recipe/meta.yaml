@@ -24,7 +24,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - setuptools >=77.0.3
-    - numpy >=1.26.3
+    - numpy >=2.0.0
     - pandas >=2.2.0,<2.3.dev0
     - pyarrow >=16.0.0
     - joblib >=1.4.2
@@ -35,12 +35,12 @@ requirements:
     - accelerate >=1.5.0
     - peft >=0.12.0
     - huggingface_hub >=0.30.2
-    - opacus >=1.5.2
-    - xgrammar >=0.1.18
+    - opacus >=1.5.4
+    - xgrammar >=0.1.19
     - json-repair >=0.30.0,<0.47.0
-    - pytorch >=2.6.0,<2.6.1
-    - torchaudio >=2.6.0,<2.6.1
-    - torchvision >=0.21.0,<0.21.1
+    - pytorch >=2.7.0,<2.7.1
+    - torchaudio >=2.7.0,<2.7.1
+    - torchvision >=0.22.0,<0.22.1
 
 test:
   imports:
