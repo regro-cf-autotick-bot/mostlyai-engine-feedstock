@@ -1,10 +1,11 @@
-{% set name = "mostlyai-engine" %}
-{% set version = "1.4.8" %}
-{% set python_min = "3.10" %}
+context:
+  name: "mostlyai-engine"
+  version: "1.4.8"
+  python_min: "3.10"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name | lower }}
+  version: ${{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mostlyai_engine-{{ version }}.tar.gz
@@ -12,17 +13,17 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - hatchling
     - hatch-vcs
     - pip
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - setuptools >=77.0.3
     - numpy >=2.0.0
     - pandas >=2.2.0,<2.3.dev0
@@ -42,20 +43,18 @@ requirements:
     - torchaudio >=2.7.0,<2.7.1
     - torchvision >=0.22.0,<0.22.1
 
-test:
-  imports:
-    - mostlyai.engine
-  commands:
-    - pip check
-  requires:
-    - python {{ python_min }}
-    - pip
+tests:
+  - python:
+      python_version: ${{ python_min }}.*
+      pip_check: false
+      imports:
+        - mostlyai.engine
 
 about:
   summary: Synthetic Data Engine
   license: Apache-2.0
   license_file: LICENSE
-  home: https://github.com/mostly-ai/mostlyai-engine
+  homepage: https://github.com/mostly-ai/mostlyai-engine
 
 extra:
   recipe-maintainers:
