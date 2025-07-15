@@ -8,7 +8,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mostlyai_engine-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/mostlyai_engine-${{ version }}.tar.gz
   sha256: d42437b1e275ceccd06762f2dd20f1e8540e34b31e4b1199930ff9cc58d2e69c
 
 build:
