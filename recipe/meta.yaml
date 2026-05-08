@@ -1,5 +1,5 @@
 {% set name = "mostlyai-engine" %}
-{% set version = "1.4.5" %}
+{% set version = "2.6.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/mostlyai_engine-{{ version }}.tar.gz
-  sha256: a2ceaafc3245f00a49a6c075c3fe4bd4aee83fa983a017633de1bdcdf325e5b5
+  sha256: a75ce62fc4e91adf1f5fae7166431aec8e1505f26ef260d078e1607fcfb44d82
 
 build:
   noarch: python
